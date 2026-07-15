@@ -19,6 +19,7 @@ const ExpenseList = ({ expenses = [], onDeleteExpense }) => {
 								title={expense.title}
 								id={expense.id}
 								amount={expense.amount}
+								category={expense.category}
 							/>
 						)
 					})}

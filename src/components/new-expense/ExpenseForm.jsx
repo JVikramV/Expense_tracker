@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import FormInput from '../UI/input/FormInput';
+import Select from '../UI/select/Select';
 import Button from '../UI/button/Button';
+import { CATEGORIES, DEFAULT_CATEGORY } from '../../constants/categories';
 import './ExpenseForm.css';
 
 const ExpenseForm = ({ onCloseForm, onAddNewExpense }) => {
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState('');
+  const [category, setCategory] = useState(DEFAULT_CATEGORY);
 
   const isFormValid =
     title.trim().length !== 0 &&
@@ -25,6 +28,10 @@ const ExpenseForm = ({ onCloseForm, onAddNewExpense }) => {
     setDate(e.target.value);
   };
 
+  const categoryChangeHandler = (e) => {
+    setCategory(e.target.value);
+  };
+
   const submitHandler = (e) => {
     e.preventDefault();
     if (isFormValid) {
@@ -32,6 +39,7 @@ const ExpenseForm = ({ onCloseForm, onAddNewExpense }) => {
         date: new Date(date),
         title,
         amount: Number(amount),
+        category,
         id: Date.now().toString(),
       };
       onAddNewExpense(expense);
@@ -39,6 +47,7 @@ const ExpenseForm = ({ onCloseForm, onAddNewExpense }) => {
       setTitle('');
       setAmount('');
       setDate('');
+      setCategory(DEFAULT_CATEGORY);
       onCloseForm();
     } else {
       alert('Заполните все поля!');
@@ -66,6 +75,18 @@ const ExpenseForm = ({ onCloseForm, onAddNewExpense }) => {
           onChange={dateChangeHandler}
           value={date}
         />
+        <Select
+          label="Category"
+          id="category"
+          value={category}
+          onChange={categoryChangeHandler}
+        >
+          {CATEGORIES.map((cat) => (
+            <option key={cat} value={cat}>
+              {cat}
+            </option>
+          ))}
+        </Select>
       </div>
       <div className="new-expense__actions">
         <Button type="button" onClick={onCloseForm}>
@@ -78,9 +99,3 @@ const ExpenseForm = ({ onCloseForm, onAddNewExpense }) => {
 };
 
 export default ExpenseForm;
-
-// git init
-// git add .
-// git commit -m "message"
-// git branch -M feature/old-name feature/new-name
-// git checkout

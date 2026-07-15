@@ -5,3 +5,10 @@
 	width: 50rem;
 	max-width: 95%;
 }
+
+.expenses__export {
+	display: flex;
+	justify-content: flex-end;
+	padding: 0 1rem;
+	margin-bottom: 0.5rem;
+}

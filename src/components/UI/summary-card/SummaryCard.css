@@ -1,0 +1,20 @@
+.summary-card {
+	background-color: #096dc5;
+	padding: 1rem;
+	text-align: center;
+}
+
+.summary-card__label {
+	color: rgba(255, 255, 255, 0.85);
+	font-size: 0.85rem;
+	font-weight: bold;
+	margin: 0 0 0.5rem 0;
+	text-transform: uppercase;
+}
+
+.summary-card__value {
+	color: white;
+	font-size: 1.25rem;
+	font-weight: bold;
+	margin: 0;
+}

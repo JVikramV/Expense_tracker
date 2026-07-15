@@ -1,0 +1,13 @@
+.select__label {
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	display: block;
+}
+
+.select__control {
+	font: inherit;
+	padding: 0.5rem 1rem;
+	border-radius: 6px;
+	border: 1px solid #ccc;
+	width: 100%;
+}

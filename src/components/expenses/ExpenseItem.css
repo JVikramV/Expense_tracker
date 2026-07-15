@@ -17,12 +17,29 @@
 	flex: 1;
 }
 
-.expense-item h2 {
-	color: #3678c3;
-	font-size: 1rem;
+.expense-item__info {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
 	flex: 1;
 	margin: 0 1rem;
+}
+
+.expense-item h2 {
 	color: white;
+	font-size: 1rem;
+	margin: 0;
+}
+
+.expense-item__category {
+	font-size: 0.75rem;
+	font-weight: bold;
+	color: rgb(18, 17, 17);
+	background-color: #eae9f2;
+	border: 1px solid white;
+	padding: 0.15rem 0.5rem;
+	border-radius: 12px;
+	align-self: flex-start;
 }
 
 .expense-item__price {

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Expenses from './components/expenses/Expenses'
 import NewExpense from './components/new-expense/NewExpense'
+import { DEFAULT_CATEGORY } from './constants/categories'
 
 const EXPENSES = [
 	{
@@ -29,17 +30,22 @@ const EXPENSES = [
 	},
 ]
 
+const normalizeExpenses = (expenses) =>
+	expenses.map((expense) => ({
+		...expense,
+		category: expense.category ?? DEFAULT_CATEGORY,
+	}))
+
 function App() {
-	const [expenses, setExpenses] = useState(EXPENSES)
+	const [expenses, setExpenses] = useState(normalizeExpenses(EXPENSES))
 
 	const addNewExpenseHandler = (newExpense = {}) => {
 		setExpenses((prevExpenses) => {
-			return [...prevExpenses, newExpense]
+			return [...prevExpenses, normalizeExpenses([newExpense])[0]]
 		})
 	}
 
 	const deleteExpenseByIdHandler = (id) => {
-		// const filteredExpenses = expenses.filter((expense) => expense.id !== id)
 		setExpenses((prevExpenses) =>
 			prevExpenses.filter((expense) => expense.id !== id),
 		)

@@ -1,0 +1,12 @@
+.expenses-summary {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+	margin: 1rem 0;
+}
+
+@media (min-width: 768px) {
+	.expenses-summary {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}

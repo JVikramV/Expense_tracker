@@ -1,0 +1,25 @@
+.expenses-pie-chart {
+	padding: 1rem;
+	border-radius: 12px;
+	background-color: #dfe6ff;
+	margin: 1rem 0;
+	text-align: center;
+}
+
+.expenses-pie-chart__title {
+	color: #1a3a5c;
+	font-size: 1rem;
+	margin: 0 0 1rem 0;
+}
+
+.expenses-pie-chart__canvas {
+	height: 16rem;
+	max-width: 20rem;
+	margin: 0 auto;
+}
+
+.expenses-pie-chart__fallback {
+	color: #1a3a5c;
+	font-weight: bold;
+	margin: 2rem 0;
+}
