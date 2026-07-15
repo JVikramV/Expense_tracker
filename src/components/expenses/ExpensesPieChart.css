@@ -13,8 +13,10 @@
 }
 
 .expenses-pie-chart__canvas {
-	height: 16rem;
-	max-width: 20rem;
+	position: relative;
+	width: 100%;
+	max-width: 22rem;
+	height: 18rem;
 	margin: 0 auto;
 }
 
@@ -22,4 +24,25 @@
 	color: #1a3a5c;
 	font-weight: bold;
 	margin: 2rem 0;
+}
+
+@media (max-width: 480px) {
+	.expenses-pie-chart {
+		padding: 0.75rem;
+	}
+
+	.expenses-pie-chart__canvas {
+		height: 16rem;
+		max-width: 100%;
+	}
+
+	.expenses-pie-chart__title {
+		font-size: 0.9rem;
+	}
+}
+
+@media (min-width: 768px) {
+	.expenses-pie-chart__canvas {
+		height: 20rem;
+	}
 }
